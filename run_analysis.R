@@ -127,12 +127,22 @@ summarized_of_std <- summarized_data %>% select( c( subject, activity, contains(
 # writing tidy datsets to a file
 if(!dir.exists("./data/tidy_data/")) dir.create("./data/tidy_data/")
 
+file.create("./data/tidy_data/whole_mean.txt")
+wd_file <- file("./data/tidy_data/whole_mean.txt" , "w")
+write.table(summarized_data, wd_file, row.names = FALSE)
+close(wd_file , "w")
+rm("wd_file")
+
 file.create("./data/tidy_data/mean_of_means")
-write.table(summarized_of_mean, file("./data/tidy_data/mean_of_means" , "w"))
-close("./data/tidy_data/mean_of_means" , "w")
+md_file <- file("./data/tidy_data/mean_of_means" , "w")
+write.table(summarized_of_mean, md_file)
+close(md_file , "w")
+rm("md_file")
 
 file.create("./data/tidy_data/mean_of_stds")
-write.table(summarized_of_std, file("./data/tidy_data/mean_of_stds" , "w"))
-close("./data/tidy_data/mean_of_stds" , "w")
+sd_file <- file("./data/tidy_data/mean_of_stds" , "w")
+write.table(summarized_of_std, sd_file)
+close(sd_file , "w")
+rm("sd_file")
 
 
