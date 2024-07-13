@@ -1,0 +1,1 @@
+# data-analysis-of-Samsung-Galaxy-S-accelerometers
