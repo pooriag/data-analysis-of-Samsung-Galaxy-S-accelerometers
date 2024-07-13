@@ -145,4 +145,4 @@ write.table(summarized_of_std, sd_file)
 close(sd_file , "w")
 rm("sd_file")
 
-
+summarized_data
